@@ -56,8 +56,9 @@ function Product(props) {
   const ShowProduct = () => {
     return (
       <div className="row" key={product.id}>
-        <div className=" col-12 col-md-6">
+        <div className=" col-12 col-md-6 p-3">
           <img
+            style={{ objectFit: "contain" }}
             src={product.image}
             alt={product.title}
             height="400px"

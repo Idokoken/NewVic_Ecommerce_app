@@ -1,12 +1,14 @@
-import "./App.css";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Products from "./components/Products";
 import Product from "./components/Product";
 import Cart from "./components/Cart";
-import Confirmation from "./components/Confirmation";
 import Footer from "./components/Footer";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Messages from "./components/Messages";
+import Errorpage from "./components/Errorpage";
 
 function App() {
   return (
@@ -17,7 +19,10 @@ function App() {
         <Route exact path="/products" element={<Products />} />
         <Route exact path="/products/:id" element={<Product />} />
         <Route exact path="/cart" element={<Cart />} />
-        <Route exact path="/confirmation" element={<Confirmation />} />
+        <Route exact path="About" element={<About />} />
+        <Route exact path="/contact" element={<Contact />} />
+        <Route exact path="/messages" element={<Messages />} />
+        <Route exact path="*" element={<Errorpage />} />
       </Routes>
       <Footer />
     </Router>

@@ -6,7 +6,7 @@ function Home() {
     <div className="hero">
       <div className="card bg-dark text-white border-0">
         <img
-          src="/assets/bg.jpg"
+          src="/assets/cover2.jpg"
           alt="background"
           className="card-img"
           height="550"
@@ -16,7 +16,7 @@ function Home() {
             <h5 className="card-title display-3 fw-bolder mb-0">
               New season arrivals
             </h5>
-            <p className="card-text lead fs-2">check out the trends</p>
+            <p className="card-text lead fs-2">check out trending products</p>
           </div>
         </div>
       </div>

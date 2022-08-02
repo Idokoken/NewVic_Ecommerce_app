@@ -31,36 +31,54 @@ function Footer() {
       text-align: center;
       padding-bottom: 20px;
     }
+    img {
+      width: 30px;
+      height: 30px;
+    }
+    .brand {
+      align-self: flex-start;
+    }
+    .icon-header {
+      display: flex;
+    }
+    .icon {
+      margin-right: 20px;
+    }
   `;
   return (
     <Wrapper>
       <div className="footer">
-        <div className="item">
+        <div className="item brand">
           <div className="icon-header">
             <img src="/assets/brand.png" alt="brand" /> <h3>NewVic</h3>
           </div>
-          <div className="icons-container">icon</div>
+          <h4>Follow Us</h4>
+          <div className="icons-container">
+            <i className="fa-brands fa-facebook icon"></i>
+            <i className="fa-brands fa-twitter icon"></i>
+            <i className="fa-brands fa-instagram icon"></i>
+          </div>
         </div>
         <div className="item">
-          <h3>heading</h3>
-          <p>lorem episum</p>
-          <p>lorem episum</p>
-          <p>lorem episum</p>
-          <p>lorem episum</p>
+          <h3>SERVICES</h3>
+          <p>Accessibility</p>
+          <p>Disclamers</p>
+          <p>Sitemap</p>
+          <p>Cookies </p>
         </div>
         <div className="item">
-          <h3>heading</h3>
-          <p>lorem episum</p>
-          <p>lorem episum</p>
-          <p>lorem episum</p>
-          <p>lorem episum</p>
+          <h3>RESOURCES</h3>
+          <p>Blog</p>
+          <p>Online training</p>
+          <p>Qaulity for government contact</p>
+          <p>National resource Guide</p>
         </div>
         <div className="item">
-          <h3>heading</h3>
-          <p>lorem episum</p>
-          <p>lorem episum</p>
-          <p>lorem episum</p>
-          <p>lorem episum</p>
+          <h3>OUR COMPNY</h3>
+          <p>Contact us</p>
+          <p>Privacy policy</p>
+          <p>User agreement</p>
+          <p>Privacy</p>
         </div>
       </div>
       <hr className="rule" />

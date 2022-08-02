@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 
 function Products() {
   const [data, setData] = useState([]);
@@ -58,35 +59,47 @@ function Products() {
     setFilter(updatedProduct);
   };
 
+  //css section
+  const Wrapper = styled.div`
+    .header {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    img {
+      object-fit: contain;
+    }
+  `;
+
   const ShowProducts = () => (
     <>
-      <div className="button d-flex justify-content-center mb-5 pb-5">
+      <div className="header button d-flex justify-content-center mb-5 pb-5">
         <button
-          className="btn btn-outline-dark me-2"
+          className="btn btn-outline-dark me-2 mb-1"
           onClick={() => setFilter(data)}
         >
           All
         </button>
         <button
-          className="btn btn-outline-dark me-2"
+          className="btn btn-outline-dark me-2 mb-1"
           onClick={() => filterProduct("men's clothing")}
         >
           Men's Clothing
         </button>
         <button
-          className="btn btn-outline-dark me-2"
+          className="btn btn-outline-dark me-2 mb-1"
           onClick={() => filterProduct("women's clothing")}
         >
           Women's Clothing
         </button>
         <button
-          className="btn btn-outline-dark me-2"
+          className="btn btn-outline-dark me-2 mb-1"
           onClick={() => filterProduct("jewelery")}
         >
           Jewelery
         </button>
         <button
-          className="btn btn-outline-dark me-2"
+          className="btn btn-outline-dark me-2 mb-1"
           onClick={() => filterProduct("electronics")}
         >
           Electronics
@@ -94,8 +107,8 @@ function Products() {
       </div>
       {filter.map((product, i) => {
         return (
-          <div className="col-md-3 mb-4">
-            <div className="card h-100 text-center p-4" key={product.id}>
+          <div className="main col-12 col-md-3 col-l-4" key={i}>
+            <div className="item card h-100 text-center p-4" key={product.id}>
               <img
                 className="card-img-top"
                 height="250px"
@@ -122,17 +135,19 @@ function Products() {
   );
 
   return (
-    <div className="container mt-5 py-5">
-      <div className="row ">
-        <div className="col-12 mb-5">
-          <h2 className="display-6 fw-bolder text-center">Latest Product</h2>
-          <hr />
+    <Wrapper>
+      <div className="container mt-5 py-5">
+        <div className="row ">
+          <div className="col-12 mb-5">
+            <h2 className="display-6 fw-bolder text-center">Latest Product</h2>
+            <hr />
+          </div>
+        </div>
+        <div className="row justify-content-center">
+          {loading ? <Loading /> : <ShowProducts />}
         </div>
       </div>
-      <div className="row justify-content-center">
-        {loading ? <Loading /> : <ShowProducts />}
-      </div>
-    </div>
+    </Wrapper>
   );
 }
 
