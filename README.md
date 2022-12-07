@@ -6,10 +6,10 @@ NevVic website is a frontend web development of an E-commerce business website f
 ## Technologies used in bulding the website includes
 - React.js
 - Redux
-- Bootstrap Framwork
+- Bootstrap Framework
 - CSS
 
-#### The link to the hosted(life) website is [https://newvic.herokuapp.com](https://newvic.herokuapp.com).
+#### The link to the hosted(life) website is [https://newvic.vercel.app](https://newvic.vercel.app).
 
 ### Available Scripts
 

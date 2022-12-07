@@ -3,7 +3,7 @@ import React from "react";
 // import "react-loading-skeleton/dist/skeleton.css";
 import { useSelector, useDispatch } from "react-redux";
 import { delCart, addCart } from "../redux/index";
-import styled from "styled-components";
+import styled from "styled-components";  
 
 function Cart() {
   const cart = useSelector((state) => state.cart);
