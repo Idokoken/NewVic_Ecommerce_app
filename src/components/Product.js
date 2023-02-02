@@ -12,21 +12,20 @@ function Product(props) {
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(false);
 
-  const getProduct = async () => {
-    try {
-      setLoading(true);
-      const resp = await axios.get(`https://fakestoreapi.com/products/${id}`);
-      setProduct(resp.data);
-      console.log(resp.data);
-      setLoading(false);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   useEffect(() => {
+    const getProduct = async () => {
+      try {
+        setLoading(true);
+        const resp = await axios.get(`https://fakestoreapi.com/products/${id}`);
+        setProduct(resp.data);
+        console.log(resp.data);
+        setLoading(false);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     getProduct();
-  }, []);
+  }, [id]);
 
   const Loading = () => {
     return (

@@ -1,18 +1,19 @@
 import React from "react";
 import styled from "styled-components";
 
-function About() {
-  const Wrapper = styled.div`
-    min-height: 70vh;
-    background-color: aliceblue;
+const Wrapper = styled.div`
+  min-height: 70vh;
+  background-color: aliceblue;
 
-    img {
-      width: 100%;
-      height: 80%;
-      margin-top: 0;
-      margin-bottom: 0;
-    }
-  `;
+  img {
+    width: 100%;
+    height: 80%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+`;
+
+function About() {
   return (
     <Wrapper>
       <div className="container py-2">
@@ -24,7 +25,7 @@ function About() {
         </div>
         <div className="row mt-0">
           <div className="col-12">
-            <h3 class="pb-2 pt-0">About Us</h3>
+            <h3 className="pb-2 pt-0">About Us</h3>
             <p>
               Founded in 2021 in Abuja, NewVic is a national leading
               direct-to-consumer online shop, providing well-selected products

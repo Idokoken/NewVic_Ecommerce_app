@@ -3,23 +3,23 @@ import { NavLink, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 
+//css section
+const Wrapper = styled.header`
+  margin: 0;
+
+  .nav-link,
+  .navbar-brand {
+    color: rgb(121, 7, 45) !important;
+    font-weight: bold;
+  }
+  .nav-link:focus {
+    color: black !important;
+    font-weight: bolder;
+  }
+`;
+
 function Header() {
   const counter = useSelector((state) => state.cart);
-
-  //css section
-  const Wrapper = styled.header`
-    margin: 0;
-
-    .nav-link,
-    .navbar-brand {
-      color: rgb(121, 7, 45) !important;
-      font-weight: bold;
-    }
-    .nav-link:focus {
-      color: black !important;
-      font-weight: bolder;
-    }
-  `;
 
   return (
     <Wrapper>

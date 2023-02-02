@@ -3,7 +3,27 @@ import React from "react";
 // import "react-loading-skeleton/dist/skeleton.css";
 import { useSelector, useDispatch } from "react-redux";
 import { delCart, addCart } from "../redux/index";
-import styled from "styled-components";  
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+  min-height: 70vh;
+
+  span,
+  button {
+    height: 40px;
+    width: 40px;
+    border: 2px solid black;
+    border-radius: 5px;
+  }
+  .total {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  .cart {
+    background-color: aliceblue;
+  }
+`;
 
 function Cart() {
   const cart = useSelector((state) => state.cart);
@@ -16,31 +36,12 @@ function Cart() {
     return dispatch(delCart(product));
   };
 
-  const itemPrice = cart.reduce((a, b) => a + b.price * b.qty, 0);
-  const taxPrice = itemPrice * 0.12;
-  const shippingPrice = itemPrice > 500 ? 0 : 20;
-  const totalPrice = itemPrice + shippingPrice + taxPrice;
+  //const itemPrice = cart.reduce((a, b) => a + b.price * b.qty, 0);
+  //const taxPrice = itemPrice * 0.12;
+  //const shippingPrice = itemPrice > 500 ? 0 : 20;
+  //const totalPrice = itemPrice + shippingPrice + taxPrice;
 
   //css section
-  const Wrapper = styled.div`
-    min-height: 70vh;
-
-    span,
-    button {
-      height: 40px;
-      width: 40px;
-      border: 2px solid black;
-      border-radius: 5px;
-    }
-    .total {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-    }
-    .cart {
-      background-color: aliceblue;
-    }
-  `;
 
   const listCartItem = cart.map((item, i) => (
     <div className="row cart p-3 mb-2" key={item.id}>

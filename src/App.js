@@ -9,6 +9,8 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Messages from "./components/Messages";
 import Errorpage from "./components/Errorpage";
+import * as dotenv from "dotenv";
+dotenv.config();
 
 function App() {
   return (

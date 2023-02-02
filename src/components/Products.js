@@ -4,33 +4,43 @@ import "react-loading-skeleton/dist/skeleton.css";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
+//css section
+const Wrapper = styled.div`
+  .header {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  img {
+    object-fit: contain;
+  }
+`;
+
 function Products() {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
 
-  let componentMounted = true;
+  //let componentMounted = true;
 
-  const getProduct = async () => {
-    try {
-      setLoading(true);
-      let resp = await fetch("https://fakestoreapi.com/products");
-      let result1 = await resp.clone().json();
-      let result2 = await resp.json();
-      if (componentMounted) {
+  useEffect(() => {
+    const getProduct = async () => {
+      try {
+        setLoading(true);
+        let resp = await fetch("https://fakestoreapi.com/products");
+        let result1 = await resp.clone().json();
+        let result2 = await resp.json();
+
         setData(result1);
         setFilter(result2);
         console.log(result1);
         setLoading(false);
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
+    };
     getProduct();
-    return () => (componentMounted = false);
+    //return () => (componentMounted = false);
   }, []);
 
   const Loading = () => {
@@ -58,18 +68,6 @@ function Products() {
     });
     setFilter(updatedProduct);
   };
-
-  //css section
-  const Wrapper = styled.div`
-    .header {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    img {
-      object-fit: contain;
-    }
-  `;
 
   const ShowProducts = () => (
     <>

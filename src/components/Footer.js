@@ -2,49 +2,50 @@ import React from "react";
 import styled from "styled-components";
 import { tablet } from "../Responsive";
 
+const Wrapper = styled.footer`
+  background-color: black;
+  padding: 0;
+  margin: 0;
+  color: white;
+
+  .footer {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+
+  .footer .item {
+    flex: 100%;
+    ${tablet({ flex: "25%", justifyContent: "center" })}
+  }
+  .footer .item h3 {
+    color: rgb(121, 7, 45);
+  }
+  .rule {
+    border: 4px solid white;
+  }
+  .copywite {
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  img {
+    width: 30px;
+    height: 30px;
+  }
+  .brand {
+    align-self: flex-start;
+  }
+  .icon-header {
+    display: flex;
+  }
+  .icon {
+    margin-right: 20px;
+  }
+`;
+
 function Footer() {
-  const Wrapper = styled.footer`
-    background-color: black;
-    padding: 0;
-    margin: 0;
-    color: white;
-
-    .footer {
-      width: 100vw;
-      display: flex;
-      align-items: center;
-      padding: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer .item {
-      flex: 100%;
-      ${tablet({ flex: "25%", justifyContent: "center" })}
-    }
-    .footer .item h3 {
-      color: rgb(121, 7, 45);
-    }
-    .rule {
-      border: 4px solid white;
-    }
-    .copywite {
-      text-align: center;
-      padding-bottom: 20px;
-    }
-    img {
-      width: 30px;
-      height: 30px;
-    }
-    .brand {
-      align-self: flex-start;
-    }
-    .icon-header {
-      display: flex;
-    }
-    .icon {
-      margin-right: 20px;
-    }
-  `;
   return (
     <Wrapper>
       <div className="footer">
