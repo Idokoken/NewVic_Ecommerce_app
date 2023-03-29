@@ -4,6 +4,7 @@ const Wrapper = styled.div`
   min-height: 70vh;
   background-color: aliceblue;
   padding: 30px;
+  font-family: "Times New Roman", Times, serif;
 `;
 
 function Messages() {

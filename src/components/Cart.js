@@ -7,6 +7,7 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   min-height: 70vh;
+  font-family: "Times New Roman", Times, serif;
 
   span,
   button {

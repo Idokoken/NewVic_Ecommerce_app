@@ -1,42 +1,58 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 class Contact extends Component {
   render() {
     const Wrapper = styled.div`
       min-height: 70vh;
       background-color: aliceblue;
+      font-family: "Times New Roman", Times, serif;
+
       section {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
+        margin: 30px 0;
+      }
+      .phone p,
+      .email p {
+        font-family: "Pacifico", cursive;
+        font-size: 20px;
+        font-weight: 400;
+      }
+      .email {
+        display: flex;
+      }
+      h2,
+      h3 {
+        color: rgb(121, 7, 45);
+        font-weight: 500;
       }
     `;
     return (
       <Wrapper>
-        <div className="container py-3">
-          <h2>You can call our office line</h2>
-          <p>Available 8.00 am to 5.00pm Mon</p>
-          <section className="">
-            <h3>Phone</h3>
-            <span>
-              <img src="/assets/call2.png" alt="" height="50" width="50" />
-            </span>
-            <Link
-              to="tel:#"
-              style={{
-                textDecoration: "none",
-                color: "inherit",
-                fontSize: "1rem",
-                marginLeft: "20px",
-              }}
-            >
-              <p>tel +23498200****</p>
-            </Link>
-          </section>
+        <div className="container-fluid py-3">
+          <div className="m-3">
+            <h2 className="mb-3">Reach us on our office lines, available</h2>
+            <h5>8.00 am to 5.00pm Monday to Friday</h5>
+            <h5>9.00 amm to 4.00 pm on Saturday</h5>
+            <section className="phone">
+              <h3 className="me-3">Phone</h3>
+              <div>
+                <p>tel +234982005577</p>
+                <p>tel +234982004747</p>
+                <p>tel +234982002211</p>
+              </div>
+            </section>
+            <div className="email">
+              <h3 className="me-3">Email</h3>
+              <p className="">new.ng@yahoo.com</p>
+            </div>
+          </div>
 
           <div className="container mt-3">
-            <h3>Email our us here</h3>
+            <h3 className="text-center">
+              Reach us for your complains and enquires
+            </h3>
             <form method="post" action="/contact">
               <div className="mb-3">
                 <label className="form-label">Name</label>

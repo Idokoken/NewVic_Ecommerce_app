@@ -1,31 +1,60 @@
 import React from "react";
 import styled from "styled-components";
+import { tablet } from "../Responsive";
 
 const Wrapper = styled.div`
   min-height: 70vh;
   background-color: aliceblue;
+  font-family: "Times New Roman", Times, serif;
 
+  .img-container {
+    width: 100%;
+    height: 50vh;
+    margin: 0;
+    ${tablet({ height: "60vh" })}
+  }
   img {
     width: 100%;
-    height: 80%;
-    margin-top: 0;
-    margin-bottom: 0;
+    height: 100%;
+    object-fit: cover;
+  }
+  .about {
+    position: relative;
+  }
+  .about p {
+    position: absolute;
+    font-size: 20px;
+    color: white;
+    font-family: "Oleo Script", cursive;
+    bottom: 10px;
+    left: 30px;
+    font-weight: 500;
+  }
+  .desc p {
+    font-size: 20px;
+    line-height: 2;
+  }
+  .desc h3 {
+    font-size: 30px;
+    font-weight: 600;
+    color: rgb(121, 7, 45);
+    font-family: "Roboto", sans-serif;
   }
 `;
 
 function About() {
   return (
     <Wrapper>
-      <div className="container py-2">
-        <div className="row my-0">
-          <div className="col-12 my-0 py-">
+      <div className="container-fluid  pb-3">
+        <div className="row my-0 about">
+          <div className="col-12 my-0 img-container">
             <img src="/assets/office.jpg" alt="office" />
-            <p>NewVic head Office Abuja</p>
           </div>
+          <p>NewVic head Office Abuja</p>
         </div>
-        <div className="row mt-0">
+        <div className="row px-4 py-3 mt-0 desc">
           <div className="col-12">
-            <h3 className="pb-2 pt-0">About Us</h3>
+            <h3 className="my-4">About Us</h3>
             <p>
               Founded in 2021 in Abuja, NewVic is a national leading
               direct-to-consumer online shop, providing well-selected products

@@ -11,8 +11,14 @@ const Wrapper = styled.div`
     justify-content: center;
     flex-wrap: wrap;
   }
+  .img-container {
+    height: 200px;
+    width: 100%;
+  }
   img {
     object-fit: contain;
+    width: 100%;
+    height: 100%;
   }
 `;
 
@@ -20,8 +26,6 @@ function Products() {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
-
-  //let componentMounted = true;
 
   useEffect(() => {
     const getProduct = async () => {
@@ -40,7 +44,6 @@ function Products() {
       }
     };
     getProduct();
-    //return () => (componentMounted = false);
   }, []);
 
   const Loading = () => {
@@ -105,14 +108,18 @@ function Products() {
       </div>
       {filter.map((product, i) => {
         return (
-          <div className="main col-12 col-md-3 col-l-4" key={i}>
-            <div className="item card h-100 text-center p-4" key={product.id}>
-              <img
-                className="card-img-top"
-                height="250px"
-                src={product.image}
-                alt={product.title}
-              />
+          <div className="main col-12 col-md-3 col-l-4 mb-3" key={i}>
+            <div
+              className="item card h-100 text-center p-4 mb-2"
+              key={product.id}
+            >
+              <div className="img-container">
+                <img
+                  className="card-img-top"
+                  src={product.image}
+                  alt={product.title}
+                />
+              </div>
               <div className="card-body">
                 <h5 className="card-title mb-0">
                   {product.title.substring(0, 12)}
@@ -134,7 +141,7 @@ function Products() {
 
   return (
     <Wrapper>
-      <div className="container mt-5 py-5">
+      <div className="container-fluid p-5">
         <div className="row ">
           <div className="col-12 mb-5">
             <h2 className="display-6 fw-bolder text-center">Latest Product</h2>
